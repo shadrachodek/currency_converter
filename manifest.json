@@ -4,12 +4,11 @@
   "version":"0.1",
   "homepage_url": "https://shadymedy.github.io/currency_converter/index.html",
   "developer": {
-    "name": "Odekhirach Odekhiran",
-    "url": "https://linkedin.com/akintade-britto"
+    "name": "Odekhirach Odekhiran"
   },
   "content_scripts": [
     {
-      "js": ["currency_conversion.js"],
+      "js": ["currency_conversion.js", "service_worker"],
       "css": [
         "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", 
         "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -17,5 +16,5 @@
       "all_frames": true
     }
   ],
-  "background_color": "#ffffff"
+  "background_color": "#f6f6f6"
 }

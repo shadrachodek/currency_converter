@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="Akintade Britto">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HTML for currency_conversion, working with a Vanilla js library.">
+    <link rel="manifest" href="manifest.json">
+
+	<title>Currency Converter</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+</head>
+<body>
+	<section class="container">
+		<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4" style="padding-top: 5%">
+			<div class="panel">
+				<div class="panel panel-heading panel-success">
+					<h3 class="text-center bg-gradient-info text-white"><b>Currency Converter</b></h3>
+				</div>
+				<div class="panel panel-body" style="border: 1px dotted cornflowerblue">
+			        <form>
+			        	<label for="amountInThisCurrency"></label>
+			        	<div class="input-group">
+			        		<span class="input-group-btn">
+						        <button class="btn btn-default disabled" type="button">Amount</button>
+					        </span>
+							<input type="number" id="amountInThisCurrency" class="form-control" autofocus required />
+						</div>				        
+				        
+				        <label for="fromThisCurrencyId"></label>
+						<div class="input-group">
+			        		<span class="input-group-btn">
+						        <button class="btn btn-default disabled" type="button">From</button>
+					        </span>
+							<select id="fromThisCurrencyId" class="form-control" required ></select>
+						</div>				        
+
+						<label for="toThatCurrencyId"></label>
+						<div class="input-group">
+			        		<span class="input-group-btn">
+						        <button class="btn btn-default disabled" type="button">To</button>
+					        </span>
+				        	<select id="toThatCurrencyId" class="form-control" required ></select>
+						</div>			
+				    </form>
+				    <br>
+			    	<button class="btn btn-success form-control" onclick="convertCurrency()">
+			    		<span><i class="fa fa-arrow-right"></i> </span> Convert
+			    	</button>
+			    	<br>
+			    	<h3 id="conversionResult" class="text-center text-success"></h3>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<!-- <script type="text/javascript" src="sw.js"></script> -->
+		<script type="text/javascript" src="./js/currency_conversion.js"></script>
+	</footer>
+</body>
+</html>

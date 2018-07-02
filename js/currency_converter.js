@@ -1,22 +1,11 @@
 /**
-
-Author: Akintade Britto;
+Author: Shadrach Odekhiran;
 Year: 2018;
-Description: A Vanilla-js library to convert amount in one currency to another.
+Description: library to convert amount in one currency to another.
 
 */
-if ('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js')
-  .then(function(reg) {
-    // Message for successful sw registration
-    console.log('Successful! Currency Converter SW has been registered.');
-  }).catch(function(error) {
-    // Message for failed sw registration
-    console.log(`UNSUCCESSFUL! Currency Converter SW registration failed. ${error}`);
-  });
-}
-
-        let currencies_url;
+(function () {
+       let currencies_url;
 
         currencies_url = "https://free.currencyconverterapi.com/api/v5/currencies";
 
@@ -82,3 +71,17 @@ if ('serviceWorker' in navigator){
             document.getElementById('conversionResult').innerHTML = ` <span class="text-warning">${convertedValue}</span>`
             });
         }
+
+        // ServiceWorker is a progressive technology. Ignore unsupported browser
+
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('./service_worker.js')
+            .then(function (reg) {
+              // Message for successful sw registration
+              console.log('Successful! Currency Converter SW has been registered.');
+            }).catch(function (error) {
+              // Message for failed sw registration
+              console.log(`UNSUCCESSFUL! Currency Converter SW registration failed. ${error}`);
+            });
+        }
+})()
